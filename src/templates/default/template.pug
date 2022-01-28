@@ -22,12 +22,13 @@ html(lang="ru")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet")
 
-        link(rel="apple-touch-icon" sizes="180x180" href="favicon/xapple-touch-icon.png.pagespeed.ic.fg1H9XNPx6.webp")
-        link(rel="icon" type="image/png" href="favicon/xfavicon-32x32.png.pagespeed.ic.jyhCVJTC09.webp" sizes="32x32")
-        link(rel="icon" type="image/png" href="favicon/xfavicon-16x16.png.pagespeed.ic.kkgpt7C3kP.webp" sizes="16x16")
+        link(rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png")
         link(rel="manifest" href="favicon/manifest.json")
-        link(rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#009a3d")
-        meta(name="theme-color" content="#ffffff")
+
+        link(rel="preload" href="js/vendor.js" as="script")
+        script(src="js/vendor.js")
 
     body(class=pageClass data-current-question="forWhom")
 
@@ -44,5 +45,4 @@ html(lang="ru")
         //- include modals/presentation
         //- include modals/thanks
 
-        script(src="js/vendor.js" async)
         script(src="js/script.js" async)
