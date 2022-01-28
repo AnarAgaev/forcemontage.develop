@@ -56,7 +56,11 @@ const buildCustomStyles = () => {
             openbrace: 'end-of-line',
             autosemicolon: true
         }))
-        .pipe(rename({ dirname: '', }))
+        .pipe(rename({
+            dirname: '',
+            basename: 'style',
+            extname: '.css'
+        }))
         .pipe(dest('build/css', { sourcemaps: '../maps' }))
         .pipe(plumber.stop())
         .pipe(browserSync.stream());
@@ -167,7 +171,7 @@ watch('src/video/**/*', buildVideo);
 watch('.htaccess', buildHtaccess);
 watch('*.php', buildPhp);
 watch('src/favicon/*', buildFavicon);
-// watch('src/fonts/**/*', buildFonts);
+watch('src/fonts/**/*', buildFonts);
 
 // Build project
 exports.default = series(
@@ -182,8 +186,8 @@ exports.default = series(
         buildVideo,
         buildHtaccess,
         buildPhp,
-        buildFavicon
-        // buildFonts,
+        buildFavicon,
+        buildFonts
     ),
     server
 );
