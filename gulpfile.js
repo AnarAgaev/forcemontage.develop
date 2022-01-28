@@ -15,11 +15,11 @@ const sourcemaps                            = require('gulp-sourcemaps');
 const log                                   = require('fancy-log');
 
 // Tasks
-function clean() {
+const clean = () => {
  return del('./build');
 }
 
-function buildVendorStyles() {
+const buildVendorStyles = () => {
     return src('src/vendors/scss/vendor.scss')
         .pipe(plumber({
             errorHandler: notify.onError( function(err){
@@ -36,7 +36,7 @@ function buildVendorStyles() {
         .pipe(browserSync.stream());
 }
 
-function buildCustomStyles() {
+const buildCustomStyles = () => {
     return src('src/**/main.scss', { sourcemaps: false })
         .pipe(plumber({
             errorHandler: notify.onError( function(err){
@@ -62,7 +62,7 @@ function buildCustomStyles() {
         .pipe(browserSync.stream());
 }
 
-function buildHtml() {
+const buildHtml = () => {
     return src(['src/pages/**/index.pug'])
         .pipe(plumber({
             errorHandler: notify.onError( function(err){
@@ -84,7 +84,7 @@ function buildHtml() {
         .pipe(browserSync.stream());
 }
 
-function buildVendorJs() {
+const buildVendorJs = () => {
     return src([ 'src/vendors/js/**/*.js' ])
         .pipe(sourcemaps.init())
         .pipe(rename({ dirname: '', }))
@@ -94,7 +94,7 @@ function buildVendorJs() {
         .pipe(browserSync.stream());
 }
 
-function buildCustomJs() {
+const buildCustomJs = () => {
     return src([
         'src/templates/default/js/main.js',
         'src/templates/default/js/sliders.js',
@@ -112,43 +112,43 @@ function buildCustomJs() {
         .pipe(browserSync.stream());
 }
 
-// function buildFonts() {
+// const buildFonts = () => {
 //     return src('src/fonts/**/*')
 //         .pipe(dest('build/fonts'))
 //         .pipe(browserSync.stream());
 // }
 
-function buildImages() {
+const buildImages = () => {
     return src('src/img/**/*')
         .pipe(dest('build/img'))
         .pipe(browserSync.stream());
 }
 
-function buildFavicon() {
+const buildFavicon = () => {
     return src('src/favicon/*')
         .pipe(dest('build/favicon'))
         .pipe(browserSync.stream());
 }
 
-function buildHtaccess() {
+const buildHtaccess = () => {
     return src('.htaccess')
         .pipe(dest('build'))
         .pipe(browserSync.stream());
 }
 
-function buildPhp() {
+const buildPhp = () => {
     return src('*.php')
         .pipe(dest('build'))
         .pipe(browserSync.stream());
 }
 
-function buildVideo() {
+const buildVideo = () => {
     return src('src/video/**/*')
         .pipe(dest('build/video'))
         .pipe(browserSync.stream());
 }
 
-function server() {
+const server = () => {
     browserSync.init({
         server: {
             baseDir: "./build"
