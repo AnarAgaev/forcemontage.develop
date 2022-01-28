@@ -112,11 +112,11 @@ const buildCustomJs = () => {
         .pipe(browserSync.stream());
 }
 
-// const buildFonts = () => {
-//     return src('src/fonts/**/*')
-//         .pipe(dest('build/fonts'))
-//         .pipe(browserSync.stream());
-// }
+const buildFonts = () => {
+    return src('src/fonts/**/*')
+        .pipe(dest('build/fonts'))
+        .pipe(browserSync.stream());
+}
 
 const buildImages = () => {
     return src('src/img/**/*')
