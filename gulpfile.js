@@ -11,7 +11,7 @@ const rename                                = require('gulp-rename');
 const imagemin                              = require('gulp-imagemin');
 const browserSync                           = require('browser-sync').create();
 const concat                                = require('gulp-concat');
-// const sourcemaps                         = require('gulp-sourcemaps');
+const sourcemaps                            = require('gulp-sourcemaps');
 const log                                   = require('fancy-log');
 
 // Tasks
@@ -71,25 +71,30 @@ function buildHtml() {
         .pipe(browserSync.stream());
 }
 
-function buildJs() {
+function buildVendorJs() {
+    return src([ 'src/vendors/js/**/*.js' ])
+        .pipe(sourcemaps.init())
+        .pipe(rename({ dirname: '', }))
+        .pipe(concat('vendor.js'))
+        .pipe(sourcemaps.write())
+        .pipe(dest('build/js'))
+        .pipe(browserSync.stream());
+}
+
+function buildCustomJs() {
     return src([
-        'src/templates/default/js/jquery-3.6.0.min.js',
-        'src/templates/default/js/imask.min.js',
-        'src/templates/default/js/swiper-bundle.min.js',
         'src/templates/default/js/main.js',
         'src/templates/default/js/sliders.js',
         'src/templates/default/js/masks.js',
+        'src/templates/default/modals/modals.js',
         'src/templates/default/header/header.js',
         'src/templates/default/footer/footer.js',
-        'src/templates/default/modals/modals.js',
         'src/pages/**/*.js'
     ])
-        //.pipe(sourcemaps.init())
-        .pipe(rename({
-            dirname: '',
-        }))
+        .pipe(sourcemaps.init())
+        .pipe(rename({ dirname: '', }))
         .pipe(concat('script.js'))
-        //.pipe(sourcemaps.write())
+        .pipe(sourcemaps.write())
         .pipe(dest('build/js'))
         .pipe(browserSync.stream());
 }
@@ -138,16 +143,17 @@ function server() {
     });
 }
 
-// Watches
+// Watchers
 watch('src/**/*.scss', buildStyles);
 watch('src/**/*.pug', buildHtml);
-watch('src/**/*.js', buildJs);
-// watch('src/fonts/**/*', buildFonts);
+watch('src/vendors/js/**/*.js', buildVendorJs);
+watch('src/**/*.js', buildCustomJs);
 watch('src/img/**/*', buildImages);
 watch('src/video/**/*', buildVideo);
 watch('.htaccess', buildHtaccess);
 watch('*.php', buildPhp);
 watch('src/favicon/*', buildFavicon);
+// watch('src/fonts/**/*', buildFonts);
 
 // Build project
 exports.default = series(
@@ -155,13 +161,14 @@ exports.default = series(
     parallel(
         buildStyles,
         buildHtml,
-        buildJs,
-        // buildFonts,
+        buildVendorJs,
+        buildCustomJs,
         buildImages,
         buildVideo,
         buildHtaccess,
         buildPhp,
         buildFavicon
+        // buildFonts,
     ),
     server
 );
