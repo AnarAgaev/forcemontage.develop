@@ -19,9 +19,25 @@ function clean() {
  return del('./build');
 }
 
-function buildStyles() {
-    //return src('src/**/main.scss', { sourcemaps: false })
-    return src('src/**/main.scss')
+function buildVendorStyles() {
+    return src('src/vendors/scss/vendor.scss')
+        .pipe(plumber({
+            errorHandler: notify.onError( function(err){
+                return {
+                    title: 'Sass Styles Error',
+                    message: err.message
+                };
+            })
+        }))
+        .pipe(sass())
+        .pipe(rename({ dirname: '', }))
+        .pipe(dest('build/css'))
+        .pipe(plumber.stop())
+        .pipe(browserSync.stream());
+}
+
+function buildCustomStyles() {
+    return src('src/**/main.scss', { sourcemaps: false })
         .pipe(plumber({
             errorHandler: notify.onError( function(err){
                 return {
@@ -36,15 +52,12 @@ function buildStyles() {
             cascade: false,
         }))
         .pipe(cssbeautify({
-            indent: '   ',
+            indent: '    ',
             openbrace: 'end-of-line',
             autosemicolon: true
         }))
-        .pipe(rename({
-            dirname: '',
-        }))
-        // .pipe(dest('build/css', { sourcemaps: '../maps' }))
-        .pipe(dest('build/css'))
+        .pipe(rename({ dirname: '', }))
+        .pipe(dest('build/css', { sourcemaps: '../maps' }))
         .pipe(plumber.stop())
         .pipe(browserSync.stream());
 }
@@ -144,7 +157,8 @@ function server() {
 }
 
 // Watchers
-watch('src/**/*.scss', buildStyles);
+watch('src/vendors/scss/**/*.scss', buildVendorStyles);
+watch('src/**/*.scss', buildCustomStyles);
 watch('src/**/*.pug', buildHtml);
 watch('src/vendors/js/**/*.js', buildVendorJs);
 watch('src/**/*.js', buildCustomJs);
@@ -159,7 +173,8 @@ watch('src/favicon/*', buildFavicon);
 exports.default = series(
     clean,
     parallel(
-        buildStyles,
+        buildVendorStyles,
+        buildCustomStyles,
         buildHtml,
         buildVendorJs,
         buildCustomJs,
