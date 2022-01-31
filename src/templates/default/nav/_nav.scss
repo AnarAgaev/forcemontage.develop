@@ -13,7 +13,7 @@
     background: url("../img/background.jpg");
     transform: translateX(0);
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    z-index: 999;
+    z-index: 50;
 
     @media (min-width: $lg) {
         width: 690px;

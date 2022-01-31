@@ -1,9 +1,11 @@
 //- .show
-//- #thanksModal.modal.modal_consultation
-//-     .modal__dialog
-//-         .modal__content
-//-             .modal__body.mb-0
-//-                 button.modal__close.modalCloseBtn(type='button')
-//-                 h5.modal__title СПАСИБО!
-//-                 p.modal__subtitle До того, как мы перезвоним, посмотрите больше информации на нашем сайте
-//-                 a.btn.mt-3.modalCloseBtn(href="https://raiton-yakutsk.ru/" target="_blank") перейти на сайт
+#thanksModal.modal.show
+    .modal__dialog
+        .modal__content
+            .modal__body
+                h5.modal__title
+                    | спасибо
+                    br
+                    | за заявку
+                p.modal__subtitle Наш менеджер скоро с вами свяжется
+                button.btn.btn_close.modalCloseBtn(type='button') Буду с нетерпением ждать
