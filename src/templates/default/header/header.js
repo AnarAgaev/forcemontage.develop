@@ -1,24 +1,13 @@
 $(document).ready(function () {
-    // let lastScrollTop;
+    let lastScrollTop = 0;
 
-    // $(window).scroll(() => {
+    $(window).scroll(() => {
+        let scrollTop = $(window).scrollTop();
 
-    //     if ($(window).width() < 768) {
-    //         let scrollTop = $(window).scrollTop(),
-    //             firstScreenHeight = $('#firstScreen').height();
+        scrollTop > 100 && scrollTop > lastScrollTop
+            ? $('#header').addClass('hide')
+            : $('#header').removeClass('hide');
 
-    //         console.log();
-
-    //         (scrollTop > 100 & scrollTop < firstScreenHeight)
-    //             ? $('#header').removeClass('blocked')
-    //             : $('#header').addClass('blocked');
-
-    //         (scrollTop > lastScrollTop)
-    //             ? $('#header').addClass('hide')
-    //             : $('#header').removeClass('hide');
-
-    //         lastScrollTop = $(window).scrollTop();
-    //     }
-
-    // });
+        lastScrollTop = $(window).scrollTop();
+    });
 });

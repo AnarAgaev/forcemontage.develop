@@ -1,8 +1,15 @@
 @import "../scss/variables";
 
 .header {
+    position: fixed;
     width: 100%;
     background-color: $color-font-primary;
+    transform: translateY(0);
+    transition: transform .2s ease-out;
+
+    &.hide {
+        transform: translateY(-100%);
+    }
 
     &__wrapper {
         display: flex;
