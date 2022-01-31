@@ -39,6 +39,7 @@ body {
     font-weight: normal;
     font-style: normal;
     color: $color-font-primary;
+    background: url("../img/background.jpg");
 
     &.modal-open {
         overflow: hidden;
@@ -114,6 +115,12 @@ button {
         content: "";
         display: table;
         clear: both;
+    }
+}
+
+@media (min-width: $xl) {
+    .container {
+        max-width: 1122px !important;
     }
 }
 
