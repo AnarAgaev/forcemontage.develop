@@ -6,6 +6,7 @@
     background-color: $color-font-primary;
     transform: translateY(0);
     transition: transform .2s ease-out;
+    z-index: 10;
 
     &.hide {
         transform: translateY(-100%);
