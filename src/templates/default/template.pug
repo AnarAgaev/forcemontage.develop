@@ -23,10 +23,18 @@ html(lang="ru")
         link(rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png")
         link(rel="manifest" href="favicon/manifest.json")
 
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet")
+
         link(rel="preload" href="js/vendor.js" as="script")
         script(src="js/vendor.js")
 
     body(class=pageClass data-current-question="forWhom")
+
+        //- .hide
+        nav.nav#nav.hide
+            include nav/nav
 
         header.header#header
             include header/header

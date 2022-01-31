@@ -104,6 +104,7 @@ const buildCustomJs = () => {
         'src/templates/default/js/sliders.js',
         'src/templates/default/js/masks.js',
         'src/templates/default/modals/modals.js',
+        'src/templates/default/nav/nav.js',
         'src/templates/default/header/header.js',
         'src/templates/default/footer/footer.js',
         'src/pages/**/*.js'
