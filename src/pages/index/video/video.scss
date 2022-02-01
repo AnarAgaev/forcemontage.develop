@@ -1,0 +1,86 @@
+@import "../../../templates/default/scss/variables";
+
+.index-video {
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: calc(100% + 30px);
+        height: 250px;
+        background: url("../img/index-video.jpg") center no-repeat;
+        background-size: cover;
+        margin: 0 -15px;
+        cursor: default;
+
+        @media (min-width: $md) {
+            height: 530px;
+        }
+
+        @media (min-width: $lg) {
+            height: 730px;
+        }
+    }
+
+    &__icon {
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: relative;
+        background: $color-back-secondary;
+        opacity: 0.6;
+        border-radius: 50%;
+        box-shadow: 0 0 0 10px rgba(0,0,0,1);
+        animation: shadow-animation-mob 1s linear infinite alternate ;
+        transition: all .2s linear;
+        cursor: pointer;
+
+        @media (min-width: $lg) {
+            width: 130px;
+            height: 130px;
+            animation: shadow-animation-desc 1.5s linear infinite alternate ;
+
+            &:hover {
+                transform: rotate(120deg);
+            }
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%);
+            border: 12px solid transparent;
+            border-left: 20px solid $color-font-secondary;
+            margin-left: -7px;
+
+            @media (min-width: $lg) {
+                border: 20px solid transparent;
+                border-left: 34px solid $color-font-secondary;
+                margin-left: -11px;
+            }
+        }
+    }
+}
+
+@keyframes shadow-animation-mob {
+    0% {
+        box-shadow: 0 0 0 10px rgba(0,0,0,1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(0,0,0,1);
+    }
+}
+
+@keyframes shadow-animation-desc {
+    0% {
+        box-shadow: 0 0 0 20px rgba(0,0,0,1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 40px rgba(0,0,0,1);
+    }
+}

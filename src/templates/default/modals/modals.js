@@ -12,11 +12,16 @@ $(document).ready(() => {
                 .data('target');
         }
 
-        const video = $(modal).find('video')[0];
-
         $(modal).addClass('show');
 
+        const video = $(modal).find('video')[0];
         if (video) video.play();
+
+        const iframe = $(modal).find('iframe')[0];
+        if (iframe) {
+            const src = $(el).data('youtubeSrc');
+            iframe.src = src;
+        }
     };
 
     $('.modal').click(e => {
@@ -28,12 +33,15 @@ $(document).ready(() => {
     const hideModal = function (el) {
         let modal = $(el).closest('.modal'),
             video = $(modal).find('video')[0],
+            iframe = $(modal).find('iframe')[0],
             dialogs = $(modal).find('.modal__dialog');
 
         if (video) {
             video.pause();
             video.currentTime = 0;
         }
+
+        if (iframe) iframe.src = '';
 
         modal.removeClass('show');
 
