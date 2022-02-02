@@ -23,6 +23,17 @@
         opacity: 1;
         transition: all 4s cubic-bezier(0.22, 1, 0.36, 1);
 
+        &.custom-background-position {
+
+            @media (min-width: $md) {
+                background-position: center -450px;
+            }
+
+            @media (min-width: $lg) {
+                background-position: center -700px;
+            }
+        }
+
         &.animation {
             transform: translateY(15px);
             opacity: 0;

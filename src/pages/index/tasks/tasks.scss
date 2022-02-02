@@ -7,10 +7,12 @@
     height: auto;
     margin: 0 auto;
     padding-top: 73px;
+    padding-bottom: 82px;
 
     @media (min-width: $md) {
         width: 690px;
         padding-top: 87px;
+        padding-bottom: 88px;
     }
 
     @media (min-width: $lg) {

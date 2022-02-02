@@ -14,12 +14,12 @@
         margin: 0 -15px;
         cursor: default;
 
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
         opacity: 1;
         transition: all 3s cubic-bezier(0.22, 1, 0.36, 1);
 
         &.animation {
-            transform: translateY(-50px);
+            transform: translateY(-50px) scale(0.95);
             opacity: 0;
         }
 

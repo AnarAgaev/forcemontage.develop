@@ -1,0 +1,58 @@
+@import "../../../templates/default/scss/variables";
+
+.anchors {
+    width: 290px;
+    margin: 0 auto;
+    padding-top: 11px;
+    padding-bottom: 96px;
+
+    @media (min-width: $sm) {
+        width: 311px;
+    }
+
+    @media (min-width: $md) {
+        width: 356px;
+        padding-top: 121px;
+        padding-bottom: 120px;
+    }
+
+    p {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+        transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+
+        @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+                transition-delay: 0.3s * $i;
+            }
+        }
+
+        &.animation {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+    }
+
+    .btn {
+        @media (min-width: $md) {
+            height: 64px;
+        }
+    }
+
+    &__lite {
+        margin-bottom: 84px;
+
+        @media (min-width: $md) {
+            margin-bottom: 80px;
+        }
+    }
+
+    &__dark {
+        margin-bottom: 47px;
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+}

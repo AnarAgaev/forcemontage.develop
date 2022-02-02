@@ -10,6 +10,7 @@
     background: url(../img/first-screen-mob.jpg) -147px -145px no-repeat;
     opacity: 0;
     transition: all .2s linear;
+    z-index: 1;
 
     @media (min-width: $sm) {
         background-position: center -145px;
@@ -17,7 +18,7 @@
 
     @media (min-width: $md) {
         height: 986px;
-        background: url(../img/first-screen-desc.jpg) center no-repeat;
+        //background: url(../img/first-screen-desc.jpg) center no-repeat;
         background-size: cover;
     }
 
