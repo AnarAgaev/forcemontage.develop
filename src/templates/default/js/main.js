@@ -1,18 +1,18 @@
-// // Блокируем зум экрана на IOS
-// document.addEventListener(
-//     'touchmove',
-//     function(event) {
-//         event = event.originalEvent || event;
-//
-//         if (event.scale !== 1) {
-//             event.preventDefault();
-//         }
-//     },
-//     false
-// );
-//
-// window.IS_DEBUGGING = true;
-//
+// Блокируем зум экрана на IOS
+document.addEventListener(
+    'touchmove',
+    function(event) {
+        event = event.originalEvent || event;
+
+        if (event.scale !== 1) {
+            event.preventDefault();
+        }
+    },
+    false
+);
+
+window.IS_DEBUGGING = true;
+
 // /* В суперглобальной переменной STORE храним
 //  * все дынные, введенные пользователем
 //  * С помощью проксирования, слушаем
@@ -109,8 +109,38 @@
 //         .attr('name');
 // };
 //
-// $(document).ready(() => {
-//
+
+const showAnimationElements = () => {
+    const scrollTop = window.pageYOffset,
+        windowHeight = $(window).height(),
+        windowScrollTop = scrollTop + windowHeight,
+        animationElms = $('.animation');
+
+    animationElms.each((idx, el) => {
+        const elScrollTop = $(el).offset().top;
+
+        if (windowScrollTop > elScrollTop) {
+            $(el).removeClass('animation');
+        }
+    });
+};
+
+$(document).ready(() => {
+
+    $(window).scroll(() => {
+        // Показываем анимируемые элементы,
+        // когда скролл доходит до него
+        showAnimationElements();
+
+
+    });
+
+
+
+
+
+
+
 //     /* Слушаем изменение каждого input
 //      * В случае всплытия события,
 //      * пушим данные в STORE
@@ -214,18 +244,4 @@
 //             });
 //         }
 //     });
-// });
-//
-// // Get word form for days
-// window.getCountWordForm = (count) => {
-//     const cases = [2, 0, 1, 1, 1, 2];
-//     const forms = ['матрас', 'матраса', 'матрасов'];
-//
-//     return forms[(count % 100 > 4 && count % 100 < 20)
-//         ? 2
-//         : cases[(count % 10 < 5)
-//             ? count % 10
-//             : 5
-//             ]
-//         ];
-// };
+});
