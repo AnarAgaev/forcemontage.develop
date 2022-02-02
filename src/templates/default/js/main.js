@@ -111,9 +111,13 @@ window.IS_DEBUGGING = true;
 //
 
 const showAnimationElements = () => {
+    const offset = $(window).height() < 700
+        ? 100
+        : 200;
+
     const scrollTop = window.pageYOffset,
         windowHeight = $(window).height(),
-        windowScrollTop = scrollTop + windowHeight,
+        windowScrollTop = scrollTop + windowHeight - offset,
         animationElms = $('.animation');
 
     animationElms.each((idx, el) => {
