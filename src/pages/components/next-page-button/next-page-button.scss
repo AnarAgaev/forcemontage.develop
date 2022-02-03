@@ -1,0 +1,73 @@
+@import "../../../templates/default/scss/variables";
+
+.next-page-button {
+    position: sticky;
+    top: calc(50vh - 110px);
+    z-index: 1;
+
+    &__link {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 200px;
+        transform: translate(-175px, 110px);
+        text-decoration: none;
+        position: relative;
+        left: 50%;
+        margin-left: 520px;
+        height: 0;
+
+        @media (min-width: $xl) {
+            &:hover {
+                .next-page-button__text {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+
+    &__picture {
+        flex: 1 0 auto;
+        display: block;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid $color-accent-primary;
+        background: transparent url("../img/i-next-page.svg") center no-repeat;
+        animation: wobble-hor-bottom 3s infinite, shadow-animation-btn-next-page 3s linear infinite;
+    }
+
+    &__text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: right;
+        text-transform: uppercase;
+        color: $color-font-primary;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all .3s linear;
+        border-radius: 999px;
+        padding: 20px 110px 15px 40px;
+        background-color: rgba(0, 0, 0, .5);
+        backdrop-filter: blur(3px);
+        margin-right: -75px;
+    }
+}
+
+@keyframes wobble-hor-bottom {
+    0% { transform: translateX(0%); }
+    5% { transform: translateX(-4px) rotate(-6deg); }
+    10% { transform: translateX(4px) rotate(6deg); }
+    15% { transform: translateX(-3px) rotate(-3.6deg); }
+    20% { transform: translateX(2px) rotate(2.4deg); }
+    25% { transform: translateX(-1px) rotate(-1.2deg); }
+    30%, 100% { transform: translateX(0%); }
+}
+
+@keyframes shadow-animation-btn-next-page {
+    from { box-shadow: 0 0 0 0 rgba(0, 255, 10, 0.25); }
+    to { box-shadow: 0 0 0 20px rgba(0, 255, 10, 0); }
+}

@@ -3,6 +3,7 @@ extends ../../templates/default/template
 
 //- Including mixins here
 include picture/picture
+include ../components/next-page-button/next-page-button
 
 //- Variables for include this in used template
 block variables
@@ -10,12 +11,15 @@ block variables
     - let description = 'Write description for this page here'
     - let keywords    = 'Write keywords for this page here'
     - let pageClass   = 'page-index'
+    - let nextPageButtonText   = 'отзывы о нас';
+    - let nextPageButtonLink   = 'otzyvy-o-nas.html';
 
 block content
     include first-screen/first-screen
     include video/video
     include collaboration/collaboration
     +picture('img/index-pic-1.jpg', 'custom-background-position')
+    +next-page-button('отзывы о нас', 'otzyvy-o-nas.html')
     include tasks/tasks
     +picture('img/index-pic-2.jpg', '')
     include anchors/anchors
