@@ -111,7 +111,7 @@ window.IS_DEBUGGING = true;
 //
 
 const showAnimationElements = () => {
-    const offset = $(window).height() < 700
+    const offset = $(window).width() < 769
         ? 100
         : 200;
 
