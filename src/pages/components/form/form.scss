@@ -1,0 +1,266 @@
+@import "../../../templates/default/scss/variables";
+
+.form {
+    display: block;
+    width: 90%;
+    max-width: 327px;
+    margin: 80px auto 45px;
+
+    &__contatiner {
+        opacity: 1;
+        transition: all 4s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: .6s;
+
+        &.animation {
+            transform: translateY(40px);
+            opacity: 0;
+        }
+    }
+
+    @media (min-width: $md) {
+        max-width: 540px;
+    }
+
+    form {
+        margin-top: 37px;
+
+        @media (min-width: $md) {
+            max-width: 500px;
+            margin-top: 43px;
+        }
+    }
+
+    &__phone {
+        display: inline-block;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 28px;
+        text-decoration: none;
+        color: $color-font-primary;
+        letter-spacing: 0.6px;
+        transform: translateY(0);
+        opacity: 1;
+        transition: all 4s cubic-bezier(0.22, 1, 0.36, 1);
+
+        &.animation {
+            transform: translateY(40px);
+            opacity: 0;
+        }
+
+        @media (min-width: $md) {
+            font-size: 18px;
+            letter-spacing: 0.7px;
+        }
+
+        @media (min-width: $xl) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__title {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 26px;
+        line-height: 36px;
+        text-transform: uppercase;
+        margin-top: 30px;
+        transform: translateY(0);
+        opacity: 1;
+        transition: all 4s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: .3s;
+
+        &.animation {
+            transform: translateY(40px);
+            opacity: 0;
+        }
+
+        @media (min-width: $md) {
+            font-size: 42px;
+            line-height: 36px;
+        }
+    }
+
+    &__group {
+        display: block;
+        margin-bottom: 24px;
+
+        &_button {
+            padding: 39px 9px 0;
+            margin-bottom: 33px;
+
+            @media (min-width: $md) {
+                padding: 59px 0 0 0;
+                margin-bottom: 45px;
+
+                .btn {
+                    width: 356px;
+                }
+            }
+        }
+    }
+
+    .btn {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        color: $color-font-primary;
+    }
+}
+
+input, .input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    color: $color-font-primary;
+    outline: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 0 1rem 0 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid $color-font-primary;
+    background-color: transparent;
+
+    @media (min-width: $md) {
+        height: 60px;
+        font-size: 18px;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #aaaaaa;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &::-moz-placeholder {
+        color: #aaaaaa;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &:-moz-placeholder {
+        color: #aaaaaa;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &:-ms-input-placeholder {
+        color: #aaaaaa;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus::-webkit-input-placeholder {
+        color: #aaaaaa;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus::-moz-placeholder {
+        color: #aaaaaa;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus:-moz-placeholder {
+        color: #aaaaaa;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus:-ms-input-placeholder {
+        color: #aaaaaa;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+}
+
+.input[type="checkbox"]:checked + .checker::after {
+    background-color: $color-font-primary;
+}
+
+.label_check {
+
+    cursor: pointer;
+
+    @media (min-width: $xl) {
+        &:hover {
+            .checker::after {
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+
+    .checker {
+        display: inline-block;
+        position: relative;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        padding: 0 12px 0 55px;
+        margin-left: 8px;
+
+        @media (min-width: $md) {
+            margin-left: 0;
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        a {
+            color: $color-font-primary;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+        &::before {
+            left: 0;
+            width: 32px;
+            height: 32px;
+            border: 1px solid $color-font-primary;
+        }
+
+        &::after {
+            left: 8px;
+            width: 16px;
+            height: 16px;
+            transition: all .2s linear;
+        }
+
+        &.checker_error {
+            &::before {
+                border-color: $color-accent-primary;
+                animation: shadow-animation-error 1.5s linear infinite;
+            }
+        }
+    }
+}
+
+@keyframes shadow-animation-error {
+    from { box-shadow: 0 0 0 0 rgba(0, 255, 10, 1); }
+    to { box-shadow: 0 0 0 10px rgba(0, 255, 10, 0); }
+}

@@ -16,7 +16,7 @@
      overflow: auto;
      transition:
              left 0s linear .5s,
-             opacity .1s linear .1s,
+             opacity .2s linear .2s,
              backdrop-filter .1s linear .1s;
 
      &.show {
@@ -25,8 +25,8 @@
          backdrop-filter: blur(3px);
          transition:
                  left 0s linear 0s,
-                 opacity .1s linear 0s,
-                 backdrop-filter .1s linear 0s;
+                 opacity .2s linear 0s,
+                 backdrop-filter .2s linear 0s;
 
          .modal__dialog {
              opacity: 1;

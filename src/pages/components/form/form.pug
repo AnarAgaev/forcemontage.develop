@@ -1,0 +1,31 @@
+section.form
+    a.form__phone.animation(href="tel:+74951214254") + 7 (495) 121-42-54
+
+    h3.form__title.animation
+        | Обсудим ваш&nbsp;
+        br.d-md-none
+        | проект?
+
+    form.form__contatiner.animation(action='' method='POST')
+        input(type="hidden" name="form" value="order")
+        .form__group
+            label
+                input.form__control(type='text' name='name' placeholder='Ваше имя')
+
+        .form__group
+            label
+                input.form__control(type='tel' name='phone' id='phone' placeholder='Ваш телефон')
+
+        .form__group
+            label
+                input.form__control(type='email' name='email' placeholder='Ваш e-mail')
+
+        .form__group.form__group_button
+            button.btn(type='submit' disabled='' data-target="#thanksModal") Отправить
+
+        .form__group
+            label.label_check
+                input.input.input_check.invisible(type="checkbox" name="policy" value="true")
+                span.checker
+                    | Я согласен с&nbsp;
+                    a(href="" target="_blank") политикой конфиденциальности

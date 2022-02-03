@@ -13,6 +13,14 @@ document.addEventListener(
 
 window.IS_DEBUGGING = true;
 
+window.showLoader = () => {
+    $('#loader').addClass('show');
+};
+
+window.hideLoader = () => {
+    $('#loader').removeClass('show');
+};
+
 // /* В суперглобальной переменной STORE храним
 //  * все дынные, введенные пользователем
 //  * С помощью проксирования, слушаем
