@@ -14,11 +14,21 @@ document.addEventListener(
 window.IS_DEBUGGING = true;
 
 window.showLoader = () => {
-    $('#loader').addClass('show');
+    $('#loader').css('display', 'flex');
+
+    setTimeout(
+        () => $('#loader').addClass('show'),
+        10
+    );
 };
 
 window.hideLoader = () => {
     $('#loader').removeClass('show');
+
+    setTimeout(
+        () => $('#loader').css('display', 'none'),
+        500
+    );
 };
 
 const showAnimationElements = () => {
