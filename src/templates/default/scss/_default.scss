@@ -43,7 +43,7 @@ body {
     background: url("../img/background.jpg");
 
     &.modal-open {
-        overflow: hidden;
+        overflow: hidden !important;
     }
 }
 
@@ -56,6 +56,7 @@ body {
     flex: 1 0 auto;
     height: auto;
     padding-top: 90px;
+    overflow: hidden;
 }
 
 .hidden {
@@ -63,17 +64,17 @@ body {
 }
 
 .invisible {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-    z-index: -1;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+    z-index: -1 !important;
 }
 
 img {

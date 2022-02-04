@@ -3,6 +3,17 @@ $(document).ready(() => {
         showModal(e.target);
     });
 
+    const showYoutubeIframe = el => {
+        hideLoader();
+
+        setTimeout(
+            () => $(el)
+                .closest('.modal__dialog')
+                .removeClass('modal__dialog_hide'),
+            500
+        );
+    }
+
     window.showModal = function (el) {
         let modal = $(el).data('target');
 
@@ -13,14 +24,20 @@ $(document).ready(() => {
         }
 
         $(modal).addClass('show');
+        $('body').addClass('modal-open');
 
         const video = $(modal).find('video')[0];
         if (video) video.play();
 
         const iframe = $(modal).find('iframe')[0];
         if (iframe) {
+
+            setTimeout(showLoader, 100);
+
             const src = $(el).data('youtubeSrc');
             iframe.src = src;
+
+            iframe.onload = () => showYoutubeIframe(iframe);
         }
     };
 
@@ -41,9 +58,17 @@ $(document).ready(() => {
             video.currentTime = 0;
         }
 
-        if (iframe) iframe.src = '';
+        if (iframe) {
+            iframe.src = '';
+
+            setTimeout(
+                () => $(dialogs).addClass('modal__dialog_hide'),
+                1000
+            )
+        }
 
         modal.removeClass('show');
+        $('body').removeClass('modal-open');
 
         // Если в модальном окне несколько диалоговых окно,
         // оставляем видимым только первое
