@@ -4,15 +4,17 @@
     position: relative;
     width: 274px;
     height: auto;
-    margin: 42px auto;
-    padding-bottom: 60px;
+    margin: 42px auto 0;
+    padding-bottom: 120px;
     padding-left: 41px;
 
     @media (min-width: $md) {
         width: 540px;
         padding-left: 60px;
-        margin-top: 0;
-        padding-bottom: 12px;
+    }
+
+    @media (min-width: $xl) {
+        padding-bottom: 60px;
     }
 
     &.animation {
@@ -29,13 +31,18 @@
         left: 10px;
         top: 0;
         width: 1px;
-        height: 100%;
+        height: calc(100% - 60px);
         background-color: $color-font-primary;
         transform: translateY(0);
         transition: all 5s cubic-bezier(0.22, 1, 0.36, 1);
 
         @media (min-width: $md) {
             left: 0;
+            height: calc(100% - 110px);
+        }
+
+        @media (min-width: $xl) {
+            height: calc(100% - 50px);
         }
     }
 

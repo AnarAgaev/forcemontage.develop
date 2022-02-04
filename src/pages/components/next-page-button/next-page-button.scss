@@ -1,21 +1,63 @@
 @import "../../../templates/default/scss/variables";
 
 .next-page-button {
-    position: sticky;
-    top: calc(50vh - 110px);
-    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    left: 0;
+
+    &.sticky {
+        position: fixed;
+        bottom: 100px;
+    }
+
+    &.show {
+        a {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: .1s;
+        }
+    }
+
+    &.pos-relative {
+        position: relative !important;
+        top: 0 !important;
+
+        .next-page-button__text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 
     &__link {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         width: 200px;
-        transform: translate(-175px, 110px);
         text-decoration: none;
         position: relative;
-        left: 50%;
-        margin-left: 520px;
+        right: 40px;
         height: 0;
+        opacity: 0;
+        transform: translateX(40px);
+        transition: all .7s cubic-bezier(0.22, 1, 0.36, 1);
+
+        @media (min-width: $md) {
+            right: 70px
+        }
+
+        @media (min-width: $lg) {
+            right: 150px
+        }
+
+        &.show {
+            .next-page-button__text {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
         @media (min-width: $xl) {
             &:hover {
