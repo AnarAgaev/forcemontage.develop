@@ -219,6 +219,25 @@ button {
 
 }
 
+.btn-inform {
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid $color-accent-primary;
+    background: url("../img/i-inform.svg") center no-repeat;
+    background-size: 22%;
+    z-index: 1;
+    cursor: pointer;
+    animation: wobble-hor-bottom 3s infinite, shadow-animation-btn-next-page 3s linear infinite;
+
+    @media (min-width: $xl) {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 //.slider {
 //    position: relative;
 //    width: 100%;

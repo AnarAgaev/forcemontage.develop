@@ -32,13 +32,9 @@ window.hideLoader = () => {
 };
 
 const showAnimationElements = () => {
-    const offset = $(window).width() < 769
-        ? 100
-        : 200;
-
     const scrollTop = window.pageYOffset,
         windowHeight = $(window).height(),
-        windowScrollTop = scrollTop + windowHeight - offset,
+        windowScrollTop = scrollTop + windowHeight,
         animationElms = $('.animation');
 
     animationElms.each((idx, el) => {
@@ -70,6 +66,6 @@ $(document).ready(() => {
         // Показываем скрывтые элементы
         // футера, когда проскролили
         // всю страницу,
-        showFooterElements();
+        // showFooterElements();
     });
 });
