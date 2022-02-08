@@ -96,8 +96,25 @@ $(document).ready(() => {
         );
 });
 
-
 Fancybox.bind('[data-fancybox="gallery-design"]', {
+    Thumbs: false,
+    Toolbar: false,
+    Image: {
+        wheel: false, // Disable zoom on scroll event
+        click: false, // Disable zoom on image click
+    }
+});
+
+Fancybox.bind('[data-fancybox="gallery-equipment"]', {
+    Thumbs: false,
+    Toolbar: false,
+    Image: {
+        wheel: false, // Disable zoom on scroll event
+        click: false, // Disable zoom on image click
+    }
+});
+
+Fancybox.bind('[data-fancybox="gallery-realization"]', {
     Thumbs: false,
     Toolbar: false,
     Image: {
