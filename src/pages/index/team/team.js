@@ -66,6 +66,19 @@ toggleDesc = evt => {
         _this.toggleClass('rotated');
         toggleFoolScreenDescs(wrap);
     }
+},
+
+showTeamGallery = (evt) => {
+
+    const _this = evt.target;
+
+    let galleryId = $(_this).data('gallery-id');
+
+    if (!galleryId) {
+        galleryId = $(_this).closest('[data-gallery-id]').data('gallery-id')
+    }
+
+    $(galleryId).find('a:first-child img').click();
 };
 
 $(document).ready(() => {
@@ -74,4 +87,21 @@ $(document).ready(() => {
         .forEach(
             el => $(el).click(toggleDesc)
         );
+
+    // Показываем галерея одного из членов команды
+    $('.team__pics')
+        .toArray()
+        .forEach(
+            el => $(el).click(showTeamGallery)
+        );
+});
+
+
+Fancybox.bind('[data-fancybox="gallery-design"]', {
+    Thumbs: false,
+    Toolbar: false,
+    Image: {
+        wheel: false, // Disable zoom on scroll event
+        click: false, // Disable zoom on image click
+    }
 });

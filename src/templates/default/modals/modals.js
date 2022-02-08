@@ -24,7 +24,7 @@ $(document).ready(() => {
         }
 
         $(modal).addClass('show');
-        $('body').addClass('modal-open');
+        fixScrollModalOpen();
 
         const video = $(modal).find('video')[0];
         if (video) video.play();
@@ -68,7 +68,7 @@ $(document).ready(() => {
         }
 
         modal.removeClass('show');
-        $('body').removeClass('modal-open');
+        fixScrollModalClose();
 
         // Если в модальном окне несколько диалоговых окно,
         // оставляем видимым только первое

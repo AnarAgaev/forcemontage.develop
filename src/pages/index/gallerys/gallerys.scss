@@ -1,0 +1,114 @@
+.fancybox__backdrop {
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel__button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    border-radius: 0;
+
+    svg { display: none; }
+
+    @media (min-width: $md) {
+        width: 70px;
+        height: 70px;
+    }
+
+    @media (min-width: $xl) {
+        width: 100px;
+        height: 100px;
+    }
+
+    &::before, &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 1px;
+        background-color: $color-font-primary;
+        transition: all .1s linear;
+    }
+}
+
+.carousel__button.is-next,
+.carousel__button.is-prev {
+    top: 50%;
+    transform: translateY(0);
+
+    @media (min-width: $xl) {
+        transform: translateY(-50%) !important;
+    }
+
+    &::before, &::after {
+        width: 12px;
+
+        @media (min-width: $md) {
+            width: 15px;
+        }
+
+        @media (min-width: $xl) {
+            width: 21px;
+        }
+    }
+
+    &::before {
+        transform: translate(-5px, -4px) rotate(45deg);
+
+        @media (min-width: $md) {
+            transform: translate(-6px, -5px) rotate(45deg);
+        }
+
+        @media (min-width: $xl) {
+            transform: translate(-6px, -7px) rotate(45deg);
+        }
+    }
+
+    &::after {
+        transform: translate(-5px, 4px) rotate(-45deg);
+
+        @media (min-width: $md) {
+            transform: translate(-6px, 5px) rotate(-45deg);
+        }
+
+        @media (min-width: $xl) {
+            transform: translate(-6px, 7px) rotate(-45deg);
+        }
+    }
+}
+
+.carousel__button.is-prev {
+    transform: translateY(0) scale(-1, 1) !important;
+
+    @media (min-width: $xl) {
+        transform: translateY(-50%) scale(-1, 1) !important;
+    }
+}
+
+.carousel__button.is-close {
+    top: 0 !important;
+
+    &::before, &::after {
+        width: 18px;
+
+        @media (min-width: $md) {
+            width: 20px;
+        }
+
+        @media (min-width: $xl) {
+            width: 30px;
+        }
+    }
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
