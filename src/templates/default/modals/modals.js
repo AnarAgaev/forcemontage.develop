@@ -1,5 +1,6 @@
 $(document).ready(() => {
     $('[data-toggle="modal"]').click(e => {
+        e.stopPropagation();
         showModal(e.target);
     });
 

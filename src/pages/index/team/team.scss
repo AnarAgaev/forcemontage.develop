@@ -7,6 +7,7 @@
         transform: translateY(0);
         opacity: 1;
         transition: all 4s cubic-bezier(0.22, 1, 0.36, 1);
+        cursor: pointer;
 
         &.animation {
             transform: translateY(50px);
@@ -109,15 +110,6 @@
 
             @media (min-width: $sm) {
                 margin-right: 50px;
-            }
-
-            @media (min-width: $xl) {
-                &:hover {
-                    &::before,
-                    &::after {
-                        background-color: $color-accent-primary;
-                    }
-                }
             }
 
             &::before,

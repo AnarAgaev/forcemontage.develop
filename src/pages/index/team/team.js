@@ -58,17 +58,18 @@ plusActiveItem = (wrap) => {
 
 toggleDesc = evt => {
     const _this = $(evt.target),
-        wrap = _this.closest('.team');
+        wrap = _this.closest('.team'),
+        arrow = wrap.find('button');
 
-    if ($(window).width() < 1200) {
-        toggleMobScreenDescs(wrap);
-    } else {
-        _this.toggleClass('rotated');
-        toggleFoolScreenDescs(wrap);
-    }
+    arrow.toggleClass('rotated');
+
+    $(window).width() < 1200
+        ? toggleMobScreenDescs(wrap)
+        : toggleFoolScreenDescs(wrap);
 },
 
 showTeamGallery = (evt) => {
+    evt.stopPropagation();
 
     const _this = evt.target;
 
@@ -82,7 +83,7 @@ showTeamGallery = (evt) => {
 };
 
 $(document).ready(() => {
-    $('.team__position button')
+    $('.team__item')
         .toArray()
         .forEach(
             el => $(el).click(toggleDesc)
