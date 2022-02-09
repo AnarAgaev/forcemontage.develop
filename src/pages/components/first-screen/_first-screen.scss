@@ -168,17 +168,17 @@
 
     &::before {
         height: 260px;
+
         @media (min-width: $md) {
             height: 200px;
         }
     }
 
     &:after {
-        height: 300px;
-        margin-bottom: -35px;
+        height: 265px;
 
         @media (min-width: $md) {
-            height: 450px;
+            height: 415px;
         }
     }
 
