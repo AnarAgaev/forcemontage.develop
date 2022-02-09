@@ -1,0 +1,15 @@
+include reviews-item
+
+section.reviews
+    h3.reviews__title.animation отзывы
+
+    ul.reviews__list
+        li#line
+        +reviews-item('№1', 'Очень классные впечатления от мастеров! Это шедеврально!', 'T5uVTT4e_KM', 'img/rev-1.jpg')
+        +reviews-item('№2', 'Это позитивный ремонт. Полное взаимопонимание', 'P7q9wezojXU', 'img/rev-2.jpg')
+        +reviews-item('№3', 'Андрей Мерзликин: Форсмонтаж — это высший пилотаж мастерства в кратчайшие сроки', 'TC56E-Zpk7g', 'img/rev-3.jpg')
+        +reviews-item('№4', 'Я первый раз сталкиваюсь с такой профессиональной бригадой', 'GRUoelIcebk', 'img/rev-4.jpg')
+        +reviews-item('№5', 'Ожидания полностью совпали с реальностью, и никаких нервов я на это не потратил', 'OONg1wzwEa4', 'img/rev-5.jpg')
+
+    .reviews__button.animation
+        a.btn(href="https://www.youtube.com/channel/UCoOOlXAJuhEDPhGICbP9PbA/videos" target="_blank") смотреть все

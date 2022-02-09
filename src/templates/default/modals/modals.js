@@ -35,7 +35,13 @@ $(document).ready(() => {
 
             setTimeout(showLoader, 100);
 
-            const src = $(el).data('youtubeSrc');
+            let src = $(el).data('youtubeSrc');
+
+            if (!src) {
+                src = $(el)
+                    .closest('[data-toggle="modal"]')
+                    .data('youtubeSrc');
+            }
             iframe.src = src;
 
             iframe.onload = () => showYoutubeIframe(iframe);
