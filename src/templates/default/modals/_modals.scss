@@ -191,7 +191,7 @@
         padding: 40px 20px;
         overflow: hidden;
 
-        @media (min-width: 375px) {
+        @media (min-width: $xsm) {
             padding: 73px 24px 45px;
         }
 
@@ -211,7 +211,7 @@
         padding-bottom: 20px;
         margin-bottom: 30px;
 
-        @media (min-width: 375px) {
+        @media (min-width: $xsm) {
             font-size: 26px;
             padding-bottom: 30px;
         }
@@ -250,7 +250,7 @@
         line-height: 20px;
         margin-bottom: 20px;
 
-        @media (min-width: 375px) {
+        @media (min-width: $xsm) {
             padding-left: 33px;
         }
 
@@ -300,7 +300,7 @@
         height: 50px;
         transition: all .3s linear;
 
-        @media (min-width: 375px) {
+        @media (min-width: $xsm) {
             width: 70px;
             height: 70px;
         }

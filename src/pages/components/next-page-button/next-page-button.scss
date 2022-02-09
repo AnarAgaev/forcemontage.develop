@@ -81,6 +81,9 @@
     }
 
     &__text {
+        display: flex;
+        align-items: center;
+        min-height: 100px;
         font-style: normal;
         font-weight: 300;
         font-size: 24px;

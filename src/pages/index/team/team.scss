@@ -104,7 +104,7 @@
                 transform: scale(-1, 1);
             }
 
-            @media (min-width: 375px) {
+            @media (min-width: $xsm) {
                 left: initial;
             }
 
@@ -375,7 +375,7 @@
             transform: translateX(-100%);
             margin-left: -30px;
 
-            @media (min-width: 375px) {
+            @media (min-width: $xsm) {
                 margin-left: -60px;
             }
         }
@@ -385,7 +385,7 @@
             transform: translateX(100%);
             margin-right: -30px;
 
-            @media (min-width: 375px) {
+            @media (min-width: $xsm) {
                 margin-right: -60px;
             }
         }
