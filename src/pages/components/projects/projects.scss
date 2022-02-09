@@ -4,6 +4,10 @@
     margin: 43px auto 91px;
     max-width: 785px;
 
+    @media (min-width: $md) {
+        margin-bottom: 120px;
+    }
+
     &__body {
         position: relative;
         padding: 48px 0 37px;
@@ -22,8 +26,8 @@
         }
 
         @media (min-width: $md) {
-            padding-top: 63px;
-            padding-bottom: 53px;
+            padding-top: 61px;
+            padding-bottom: 54px;
         }
 
         &::before,

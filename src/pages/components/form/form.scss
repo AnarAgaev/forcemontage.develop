@@ -5,7 +5,7 @@
     width: 90%;
     max-width: 327px;
     margin: 0 auto 45px;
-    padding-top: 80px;
+    padding-top: 116px;
 
     &__contatiner {
         opacity: 1;
@@ -19,7 +19,8 @@
     }
 
     @media (min-width: $md) {
-        max-width: 540px;
+        max-width: 500px;
+        padding-top: 72px;
     }
 
     form {
@@ -94,11 +95,15 @@
 
             @media (min-width: $md) {
                 padding: 59px 0 0 0;
-                margin-bottom: 45px;
+                width: 356px;
+                margin: 0 auto 40px;
+            }
+        }
 
-                .btn {
-                    width: 356px;
-                }
+        &_check {
+            @media (min-width: $md) {
+                width: 356px;
+                margin: 0 auto;
             }
         }
     }
@@ -189,17 +194,16 @@ input, .input {
 }
 
 .input[type="checkbox"]:checked + .checker::after {
-    background-color: $color-font-primary;
+    opacity: 1;
 }
 
 .label_check {
-
     cursor: pointer;
 
     @media (min-width: $xl) {
         &:hover {
             .checker::after {
-                background-color: rgba(255, 255, 255, 0.3);
+                opacity: 0.4;
             }
         }
     }
@@ -235,20 +239,18 @@ input, .input {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-
-        }
-
-        &::before {
             left: 0;
             width: 32px;
             height: 32px;
+        }
+
+        &::before {
             border: 1px solid $color-font-primary;
         }
 
         &::after {
-            left: 8px;
-            width: 16px;
-            height: 16px;
+            background: url("../img/i-checker.svg") center no-repeat;
+            opacity: 0;
             transition: all .2s linear;
         }
 
@@ -264,4 +266,40 @@ input, .input {
 @keyframes shadow-animation-error {
     from { box-shadow: 0 0 0 0 rgba(0, 255, 10, 1); }
     to { box-shadow: 0 0 0 10px rgba(0, 255, 10, 0); }
+}
+
+.form_discuss-project {
+
+    .form__phone,
+    .form__title,
+    form {
+        @media (min-width: $md) {
+            margin-left: -20px;
+        }
+    }
+}
+
+.form.form_lets-work {
+    padding-top: 111px;
+
+    @media (min-width: $md) {
+        padding-top: 141px;
+    }
+
+    .form__title {
+        padding-bottom: 14px;
+        margin-top: 0;
+
+        @media (min-width: $md) {
+            padding-bottom: 33px;
+        }
+    }
+
+    form {
+        margin-top: 30px;
+
+        @media (min-width: $md) {
+            margin-top: 59px;
+        }
+    }
 }
