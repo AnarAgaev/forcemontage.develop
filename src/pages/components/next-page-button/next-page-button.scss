@@ -71,12 +71,14 @@
 
     &__picture {
         flex: 1 0 auto;
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 48px;
         height: 48px;
         border-radius: 50%;
         border: 2px solid $color-accent-primary;
-        background: transparent url("../img/i-next-page.svg") center no-repeat;
+        //background: transparent url("../img/i-next-page.svg") center no-repeat;
         animation: wobble-hor-bottom 3s infinite, shadow-animation-btn-next-page 3s linear infinite;
     }
 

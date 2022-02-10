@@ -117,8 +117,8 @@
         position: relative;
         width: 100%;
         height: 375px;
-        background: url("../img/youtube.jpg") 35% center no-repeat;
-        background-size: cover;
+        //background: url("../img/youtube.jpg") 35% center no-repeat;
+        //background-size: cover;
         margin-bottom: 73px;
         transition-delay: .3s;
         transform: translateY(0) scale(1);
@@ -169,6 +169,12 @@
             }
 
 
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         button {
