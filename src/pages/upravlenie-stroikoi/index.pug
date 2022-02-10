@@ -1,0 +1,25 @@
+//- Include used template for this page
+extends ../../templates/default/template
+
+//- Including mixins here
+include ../components/next-page-button/next-page-button
+
+//- Variables for include this in used template
+block variables
+    - let title       = 'Управление стройкой FORCEMONTAGE - Комплексная реализация проекта.'
+    - let description = 'Write description for this page here'
+    - let keywords    = 'Write keywords for this page here'
+    - let pageClass   = 'page-management'
+
+block content
+    include ../components/first-screen/management
+    h1.page-title.animation
+        | Грамотный подход
+        br
+        | к реализации проектов
+        br
+        | и регулярная отчетность
+    #nextPageBtnShowPlace
+    include ../components/projects/projects
+    +next-page-button('НА ГЛАВНУЮ', 'index.html')
+    include ../components/form/form-lets-work

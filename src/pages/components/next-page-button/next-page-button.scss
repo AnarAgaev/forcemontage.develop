@@ -118,3 +118,18 @@
     from { box-shadow: 0 0 0 0 rgba(0, 255, 10, 0.25); }
     to { box-shadow: 0 0 0 20px rgba(0, 255, 10, 0); }
 }
+
+
+.page-management {
+    .next-page-button__link {
+        width: 280px;
+    }
+
+    .next-page-button__text {
+        padding-right: 105px;
+    }
+
+    .next-page-button__picture {
+        flex: none;
+    }
+}
