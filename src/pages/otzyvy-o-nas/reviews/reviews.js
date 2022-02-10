@@ -1,11 +1,8 @@
 const animationLine = $('#line'),
     animationPointsCount = $('.animation-line-point').length,
-    animationLineDelimiter = 100 / animationPointsCount;
+    animationLineDelimiter = 100 / animationPointsCount,
 
-
-console.log(animationLineDelimiter)
-
-const showAnimationLine = () => {
+showAnimationLine = () => {
     const scrollTop = window.pageYOffset,
         windowHeight = $(window).height(),
         windowScrollTop = scrollTop + windowHeight,

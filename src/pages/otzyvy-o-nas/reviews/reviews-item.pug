@@ -1,11 +1,9 @@
 mixin reviews-item(num, text, link, pic)
     li.reviews__item.animation.animation-line-point
-        span.reviews__number= num
+        span.reviews__number=num
 
-        button.reviews__link(type="button"
-            data-toggle="modal"
-            data-target="#modalYoutube"
-            data-youtube-src=`https://www.youtube.com/embed/${link}?controls=0`
+        button.reviews__link(type="button" data-fancybox
+            href=`https://www.youtube.com/watch?v=${link}`
             style=`background-image: url("${pic}");`)
-            p= text
+            p=text
             span
