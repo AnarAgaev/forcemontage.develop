@@ -111,10 +111,15 @@
     .btn {
         font-style: normal;
         font-weight: 600;
-        font-size: 17px;
+        font-size: 19px;
         text-transform: uppercase;
-        letter-spacing: 0.7px;
+        letter-spacing: 1px;
         color: $color-font-primary;
+        padding-top: 4px;
+
+        &:active {
+            color: $color-font-secondary;
+        }
     }
 }
 

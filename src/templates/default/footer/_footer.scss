@@ -1,10 +1,9 @@
 @import "../scss/variables";
 
 .footer {
-    font-family: 'Montserrat', sans-serif;
     padding-bottom: 35px;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
     overflow: hidden;
 
     @media (min-width: $md) {
@@ -108,15 +107,19 @@
 
         a {
             font-style: normal;
-            font-weight: normal;
+            font-weight: 300;
             font-size: 16px;
             line-height: 28px;
             text-transform: lowercase;
             color: $color-font-primary;
             text-decoration: none;
 
-            @media (min-width: $md) {
+            @media (min-width: $xsm) {
                 font-size: 18px;
+            }
+
+            @media (min-width: $md) {
+                font-size: 20px;
             }
         }
     }
@@ -142,14 +145,18 @@
 
         a {
             font-style: normal;
-            font-weight: normal;
+            font-weight: 300;
             font-size: 16px;
             line-height: 28px;
             color: $color-font-primary;
             text-decoration: none;
 
-            @media (min-width: $md) {
+            @media (min-width: $xsm) {
                 font-size: 18px;
+            }
+
+            @media (min-width: $md) {
+                font-size: 20px;
             }
         }
     }

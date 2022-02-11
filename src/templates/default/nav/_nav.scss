@@ -185,12 +185,12 @@
 
     &__phone {
         display: inline-block;
-        font-family: 'Montserrat', sans-serif;
         font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
+        font-weight: 300;
+        font-size: 18px;
         line-height: 28px;
         text-transform: lowercase;
+        letter-spacing: 0.2px;
         color: $color-font-primary;
         text-decoration: none;
         margin-bottom: 5px;
@@ -198,15 +198,14 @@
 
     &__mail {
         display: inline-block;
-        font-family: 'Montserrat', sans-serif;
         font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
+        font-weight: 300;
+        font-size: 20px;
         line-height: 28px;
         text-transform: lowercase;
         color: $color-font-primary;
         text-decoration: none;
-        margin-bottom: 10px;
+        margin-bottom: 11px;
     }
     
     &__socials {
