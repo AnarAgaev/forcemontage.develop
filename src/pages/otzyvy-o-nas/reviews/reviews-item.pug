@@ -5,5 +5,6 @@ mixin reviews-item(num, text, link, pic)
         button.reviews__link(type="button" data-fancybox
             href=`https://www.youtube.com/watch?v=${link}`
             style=`background-image: url("${pic}");`)
-            p=text
+            p
+                i=text
             span
