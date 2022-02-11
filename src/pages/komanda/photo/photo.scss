@@ -1,0 +1,59 @@
+@import "../../../templates/default/scss/variables";
+
+.photo {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    &__title {
+        display: block;
+        position: relative;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        width: 90%;
+        max-width: 290px;
+        margin: 0 auto;
+        transform: translateY(0);
+        opacity: 1;
+        transition: all 4s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: .3s;
+
+        &.animation {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        @media (min-width: $md) {
+            max-width: 755px;
+            padding-top: 60px;
+            padding-bottom: 66px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    &__pic {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        transition: all 4s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: .5s;
+
+        &.animation {
+            transform: translateY(50px) scale(0.9);
+            opacity: 0;
+        }
+
+        @media (min-width: $md) {
+            max-width: 755px;
+        }
+    }
+}

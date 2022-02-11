@@ -1,0 +1,27 @@
+//- Include used template for this page
+extends ../../templates/default/template
+
+//- Including mixins here
+include ../components/next-page-button/next-page-button
+
+//- Variables for include this in used template
+block variables
+    - let title       = 'Команда FORCEMONTAGE - Комплексная реализация проекта.'
+    - let description = 'Write description for this page here'
+    - let keywords    = 'Write keywords for this page here'
+    - let pageClass   = 'page-team'
+
+block content
+    include ../components/first-screen/team
+    h1.page-title.animation
+        | Коллаборация экспертов
+        br
+        | позволяет точно спланировать
+        br
+        | бюджет проекта
+    include photo/photo
+    include select/select
+    #nextPageBtnShowPlace
+    include ../components/projects/projects
+    +next-page-button('РЕАЛИЗАЦИЯ', 'upravlenie-stroikoi.html')
+    include ../components/form/form-lets-work

@@ -215,6 +215,18 @@
     }
 }
 
+.page-team {
+    .first-screen {
+        &__caption {
+            margin-left: -125px;
+
+            @media (min-width: $xl) {
+                margin-left: -590px;
+            }
+        }
+    }
+}
+
 .page-management {
     .first-screen {
         &__caption {
