@@ -36,7 +36,6 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     font-family: 'Proxima Nova', sans-serif;
-    //font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-style: normal;
     color: $color-font-primary;
@@ -287,74 +286,3 @@ h1.page-title {
         transition-delay: .5s;
     }
 }
-
-//.slider {
-//    position: relative;
-//    width: 100%;
-//    height: auto;
-//    padding-top: 10px;
-//    margin-top: 50px;
-//
-//    mark {
-//        display: flex;
-//        align-items: center;
-//        position: absolute;
-//        top: 0;
-//        left: 0;
-//        background-color: transparent !important;
-//        transform: translateY(-100%);
-//
-//        p {
-//            display: inline-block;
-//            font-weight: 600;
-//            font-size: 10px;
-//            line-height: 12px;
-//            text-align: center;
-//            text-transform: uppercase;
-//            margin-right: 7px;
-//            color: $color-font-primary;
-//
-//            @media (min-width: $md) {
-//                font-size: 14px;
-//                line-height: 17px;
-//            }
-//        }
-//
-//        span {
-//            width: 13px;
-//            height: 14px;
-//            display: flex;
-//            align-items: center;
-//            top: -1px;
-//            position: relative;
-//
-//            @media (min-width: $md) {
-//                width: 20px;
-//                height: auto;
-//            }
-//
-//            svg {
-//                width: 100%;
-//                height: auto;
-//            }
-//        }
-//    }
-//
-//    .swiper {
-//        width: 100%;
-//        height: auto;
-//    }
-//
-//    .swiper-slide {
-//        position: relative;
-//        width: 100%;
-//        height: auto;
-//        top: 0;
-//        left: 0;
-//    }
-//
-//    .swiper-pagination-bullet-active {
-//        background: $color-font-primary;
-//        opacity: 0.7;
-//    }
-//}
